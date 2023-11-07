@@ -9,7 +9,7 @@ const {
   greet,
   getPerson,
   getAllPeople,
-  getPeopleByRules: getFilteredPeople
+  getPeopleByRules,
 } = workflow.proxyActivities<typeof activities>({
   retry: {
     initialInterval: '50 milliseconds',
@@ -27,7 +27,7 @@ export async function peopleListWorkflow(request: IListRequest): Promise<IPeople
 }
 
 export async function peopleByRulesWorkflow(rules: IRule<IPeople>[]): Promise<IPeople[]> {
-  return await getFilteredPeople(rules);
+  return await getPeopleByRules(rules);
 }
 
 export async function personWorkflow(id: number): Promise<IPeople> {

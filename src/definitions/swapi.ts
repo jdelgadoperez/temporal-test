@@ -121,16 +121,16 @@ export enum ResourcesType {
 }
 
 export interface IListRequest {
-  page: number,
+  page: number;
   /**
    * Search the person by name.
    */
-  search?: string,
+  search?: string;
 }
 
 export interface IListResponse<T> {
-  count: number,
-  next?: string,
-  previous?: string,
-  results: T[],
+  count: number;
+  next?: string;
+  previous?: string;
+  results: T[];
 }

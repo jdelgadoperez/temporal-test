@@ -6,7 +6,11 @@ import { peopleByRulesWorkflow, helloWorkflow, peopleListWorkflow } from './work
 import { IRule } from './definitions/rules';
 import { IPeople } from './definitions/swapi';
 
-async function processWorkflow(client: Client, workflowTypeOrFunc: string | Workflow, options: WorkflowStartOptions<Workflow>) {
+async function processWorkflow(
+  client: Client,
+  workflowTypeOrFunc: string | Workflow,
+  options: WorkflowStartOptions<Workflow>
+) {
   try {
     const handle = await client.workflow.start(workflowTypeOrFunc, options);
     console.log(`Started workflow ${handle.workflowId}`);
@@ -44,7 +48,7 @@ async function run() {
       <IRule<IPeople>[]>[
         { propertyName: 'eye_color', operator: 'eq', value: 'red' },
         { propertyName: 'name', operator: 'regex', value: '[0-9]' },
-      ]
+      ],
     ],
     workflowId: 'workflow-' + nanoid(),
   });
