@@ -26,6 +26,7 @@
     "@temporalio/client": "^1.8.4",
     "@temporalio/worker": "^1.8.4",
     "@temporalio/workflow": "^1.8.4",
+    "axios": "^1.6.0",
     "nanoid": "3.x"
   },
   "devDependencies": {
